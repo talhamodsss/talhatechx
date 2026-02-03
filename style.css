@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #ff4d6d;
+    --secondary-color: #ff85a1;
+    --bg-color: #fff0f3;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.step {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.step.active {
+    display: flex;
+}
+
+/* Welcome Card */
+.welcome-card {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.2);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Envelope Styles */
+.envelope-wrapper {
+    cursor: pointer;
+    position: relative;
+    width: 300px;
+    height: 200px;
+}
+
+.envelope {
+    background: #f08080;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #cd5c5c;
+    z-index: 2;
+}
+
+/* Cake Styles */
+.cake {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.layer {
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.layer-top { top: 60px; background: #553c13; }
+.layer-middle { top: 90px; background: #6b4f1e; }
+.layer-bottom { top: 120px; background: #332101; }
+
+.candle {
+    position: absolute;
+    background-color: #7b020b;
+    width: 12px;
+    height: 40px;
+    top: 30px;
+    left: 94px;
+    border-radius: 4px;
+}
+
+.flame {
+    position: absolute;
+    background-color: orange;
+    width: 15px;
+    height: 25px;
+    border-radius: 50% 50% 20% 20%;
+    top: -25px;
+    left: -2px;
+    box-shadow: 0 0 10px gold;
+    animation: flicker 0.1s infinite;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
